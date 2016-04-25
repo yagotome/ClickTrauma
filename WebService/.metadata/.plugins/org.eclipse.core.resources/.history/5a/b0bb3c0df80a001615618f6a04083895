@@ -1,0 +1,29 @@
+package br.com.yagotome.clicktrauma.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class UsuarioDaoTest {
+	private EntityManager manager;
+	@Before
+	public void init() {
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("ClickTrauma");
+		manager = factory.createEntityManager();
+	}
+	
+	@After
+	public void destroy() {
+		
+	}
+	
+	@Test
+	public void testInsere() {
+		
+	}
+}

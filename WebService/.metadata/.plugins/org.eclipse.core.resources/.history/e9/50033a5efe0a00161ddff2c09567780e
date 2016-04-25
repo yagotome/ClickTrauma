@@ -1,0 +1,54 @@
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+
+import br.com.yagotome.clicktrauma.dao.UsuarioDao;
+import br.com.yagotome.clicktrauma.dao.UsuarioDaoImpl;
+import br.com.yagotome.clicktrauma.modelo.Usuario;
+
+public class Teste {
+	public static void main(String[] args) {
+		Teste teste = new Teste();
+		teste.init();
+		teste.testInsere();
+		teste.testGetById();
+		teste.testAtualiza();
+		teste.testGetById();
+		teste.destroy();
+	}
+
+	private EntityManagerFactory factory;
+	private EntityManager manager;
+	private UsuarioDao dao;
+	public void init() {
+		factory = Persistence
+				.createEntityManagerFactory("ClickTrauma");
+		manager = factory.createEntityManager();
+		dao = new UsuarioDaoImpl(manager);
+	}
+	
+	public void destroy() {
+		manager.close();
+		factory.close();
+	}
+	
+	public void testInsere() {
+		Usuario usuario = new Usuario("Yago Tomé", "yagotome", "1234");
+		usuario.setEmail("yagotome@gmail.com");
+		dao.insere(usuario);
+	}
+
+	public void testAtualiza() {
+		Usuario usuario = new Usuario();
+		usuario.setId(1L);;
+		usuario.setSenha("123456");
+		dao.insere(usuario);
+	}
+
+	public void testGetById() {
+		Usuario usuario = dao.getById(1L);
+		System.out.println("Usuário buscado: " + usuario.getLogin() + "\n"
+					+ "Senha: " + usuario.getSenha());
+	}
+}

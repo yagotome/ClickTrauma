@@ -1,0 +1,26 @@
+package br.com.yagotome.clicktrauma.modelo;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Usuario {
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Column(nullable = false)
+	private String nome;
+	@Column(nullable = true)
+	private String cpf;
+	@Column(nullable = true)
+	private String uf;
+	@Column(nullable = true)
+	private String profissao;
+	@Column(nullable = true)
+	private String especialidade;
+	@Column(nullable = true)
+	private String email;
+	private String senha;
+}

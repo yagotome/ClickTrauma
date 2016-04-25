@@ -1,0 +1,16 @@
+package br.com.yagotome.clicktrauma.dao;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class UsuarioDaoTest {
+	@Before
+	public void init() {
+		
+	}
+	
+	@Test
+	public void testInsere() {
+		
+	}
+}

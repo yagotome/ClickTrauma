@@ -1,0 +1,25 @@
+package br.com.yagotome.clicktrauma.dao;
+
+import br.com.yagotome.clicktrauma.modelo.Usuario;
+
+public class UsuarioDaoImpl implements UsuarioDao {
+
+	@Override
+	public void insere(Usuario usuario) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void atualiza(Usuario usuario) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Usuario getById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

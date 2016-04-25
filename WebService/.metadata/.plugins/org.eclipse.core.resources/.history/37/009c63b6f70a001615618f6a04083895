@@ -1,0 +1,8 @@
+package br.com.yagotome.clicktrauma.dao;
+
+public class UsuarioDaoTest {
+	@Test
+	public void testInsere() {
+		
+	}
+}
