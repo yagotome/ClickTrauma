@@ -27,7 +27,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	}
 
 	@Override
-	public Usuario getById(Long id) {			
+	public Usuario buscaPorId(Long id) {			
 		return manager.find(Usuario.class, id);
 	}
 	

@@ -11,3 +11,10 @@
 1461613319483	Delete element
 1461613370089	Delete element
 1461613504753	Rename resource 'view'
+1461616049830	Rename method 'getById'
+1461616067784	Rename method 'getById'
+1461616186689	Rename method 'exclui'
+1461616348919	Infer generic type arguments
+1461616415678	Infer generic type arguments
+1461616485317	Rename resource 'usuario'
+1461616817703	Rename type 'CadastroUsuarioController'

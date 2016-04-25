@@ -15,3 +15,11 @@
 0:0:0:0:0:0:0:1 - - [25/Apr/2016:16:44:24 -0300] "GET /ClickTrauma/usuario/cadastro HTTP/1.1" 404 1086
 0:0:0:0:0:0:0:1 - - [25/Apr/2016:16:44:43 -0300] "GET /ClickTrauma/usuario/cadastro HTTP/1.1" 404 1086
 0:0:0:0:0:0:0:1 - - [25/Apr/2016:16:45:11 -0300] "GET /ClickTrauma/usuario/cadastro HTTP/1.1" 200 279
+0:0:0:0:0:0:0:1 - - [25/Apr/2016:16:56:06 -0300] "GET /ClickTrauma/usuario/cadastro HTTP/1.1" 200 473
+0:0:0:0:0:0:0:1 - - [25/Apr/2016:17:45:54 -0300] "GET /ClickTrauma/usuario/cadastro HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [25/Apr/2016:17:46:02 -0300] "GET /ClickTrauma/pergunta/cadastro HTTP/1.1" 200 1149
+0:0:0:0:0:0:0:1 - - [25/Apr/2016:17:46:28 -0300] "GET /ClickTrauma/pergunta/cadastro HTTP/1.1" 200 1164
+0:0:0:0:0:0:0:1 - - [25/Apr/2016:17:47:03 -0300] "GET /ClickTrauma/pergunta/cadastro HTTP/1.1" 200 1173
+0:0:0:0:0:0:0:1 - - [25/Apr/2016:17:47:21 -0300] "GET /ClickTrauma/pergunta/cadastro HTTP/1.1" 200 1149
+0:0:0:0:0:0:0:1 - - [25/Apr/2016:17:47:44 -0300] "GET /ClickTrauma/pergunta/cadastro HTTP/1.1" 200 1168
+0:0:0:0:0:0:0:1 - - [25/Apr/2016:17:47:45 -0300] "GET /ClickTrauma/pergunta/cadastro HTTP/1.1" 200 1168

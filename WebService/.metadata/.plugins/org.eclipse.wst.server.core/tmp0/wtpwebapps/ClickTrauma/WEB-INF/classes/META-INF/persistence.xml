@@ -6,6 +6,8 @@
 		
 		<!-- entidade mapeada -->
 		<class>br.com.yagotome.clicktrauma.modelo.Usuario</class>
+		<class>br.com.yagotome.clicktrauma.modelo.Pergunta</class>
+		<class>br.com.yagotome.clicktrauma.modelo.Resposta</class>
 		
 		<properties>	
 			<!-- dados da conexao -->	

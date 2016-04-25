@@ -32,7 +32,7 @@ public class UsuarioDaoTest {
 
 	@Test
 	public void testGetById() {
-		Usuario usuario = dao.getById(3L);
+		Usuario usuario = dao.buscaPorId(3L);
 		assertEquals("Yago Tomé", usuario.getNome());
 		assertEquals("yagotome", usuario.getLogin());
 		assertEquals("1234567", usuario.getSenha());
@@ -46,7 +46,7 @@ public class UsuarioDaoTest {
 
 	@Test
 	public void testAtualiza() {
-		Usuario usuario = dao.getById(3L);
+		Usuario usuario = dao.buscaPorId(3L);
 		usuario.setSenha("1234567");
 		dao.atualiza(usuario);
 	}
