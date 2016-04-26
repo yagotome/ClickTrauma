@@ -9,15 +9,19 @@
 		<item value="350" key="dialogWidth"/>
 		<list key="textEntries">
 			<item value="1"/>
+			<item value="1"/>
 		</list>
 		<list key="orderedElements">
 			<item value="org.eclipse.jdt.ui.edit.text.java.create.getter.setter"/>
+			<item value="org.eclipse.jdt.ui.edit.text.java.generate.constructor.using.fields"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="org.eclipse.ui.commands"/>
 			<item value="org.eclipse.ui.commands"/>
 		</list>
 		<list key="textArray">
 			<item value="ggas"/>
+			<item value="constr"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">

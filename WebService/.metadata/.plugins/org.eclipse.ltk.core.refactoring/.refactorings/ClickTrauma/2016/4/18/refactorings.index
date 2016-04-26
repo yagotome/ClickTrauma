@@ -18,3 +18,6 @@
 1461616415678	Infer generic type arguments
 1461616485317	Rename resource 'usuario'
 1461616817703	Rename type 'CadastroUsuarioController'
+1461628405053	Copy compilation unit
+1461640399258	Rename method 'atualiza'
+1461640412279	Rename method 'altera'

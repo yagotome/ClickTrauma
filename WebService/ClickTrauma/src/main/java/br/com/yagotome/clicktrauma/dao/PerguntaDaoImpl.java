@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import br.com.yagotome.clicktrauma.modelo.Pergunta;
+import br.com.yagotome.clicktrauma.modelo.Resposta;
 
 public class PerguntaDaoImpl implements PerguntaDao {
 	private EntityManager manager;
@@ -17,21 +18,21 @@ public class PerguntaDaoImpl implements PerguntaDao {
 	public void insere(Pergunta pergunta) {
 		manager.getTransaction().begin();
 		manager.persist(pergunta);
+		for (Resposta resposta : pergunta.getRespostas()) {
+			manager.persist(resposta);
+		}
 		manager.getTransaction().commit();
 		
 	}
 
 	@Override
-	public void altera(Pergunta pergunta) {
-		manager.getTransaction().begin();
-		manager.merge(pergunta);
-		manager.getTransaction().commit();	
-	}
-
-	@Override
 	public void remove(Pergunta pergunta) {
-		manager.getTransaction().begin();		
-		manager.remove(buscaPorId(pergunta.getId()));
+		manager.getTransaction().begin();
+		pergunta = buscaPorId(pergunta.getId());
+		for (Resposta resposta : pergunta.getRespostas()) {
+			manager.remove(resposta);			
+		}
+		manager.remove(pergunta);
 		manager.getTransaction().commit();
 	}
 

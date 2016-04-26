@@ -13,7 +13,7 @@ public class Pergunta {
 	@GeneratedValue
 	private Long id;
 	private String texto;
-	@OneToMany
+	@OneToMany(mappedBy = "pergunta")
 	private List<Resposta> respostas;
 	public Long getId() {
 		return id;
