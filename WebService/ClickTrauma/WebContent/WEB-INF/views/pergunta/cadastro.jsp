@@ -21,7 +21,7 @@
 				<td><label for="pergunta"><b>Pergunta:</b></label></td>
 				<td><textarea rows="2" cols="30" name="texto" id="pergunta" required></textarea></td>				
 				<td><label for="img-pergunta">Imagem:</label></td>
-				<td><input type="file" id="img-pergunta" name="img-pergunta"></td>			
+				<td><input type="file" id="img-pergunta" name="img"></td>			
 			</tr> 
 		</table>
 		<table>
@@ -35,35 +35,35 @@
 				<td><input name="respostas[0].texto" id="resp1" required></td>
 				<td><input name="respostas[0].correta" type="checkbox"></td>				
 				<td><label for="img-resp-0">Imagem:</label></td>
-				<td><input type="file" id="img-resp-0" name="img-resp-0"></td>		
+				<td><input type="file" id="img-resp-0" name="respostas[0].img"></td>		
 			</tr>
 			<tr>
 				<td><label for="resp2">Resposta 2:</label></td>
 				<td><input name="respostas[1].texto" id="resp2" required></td>
 				<td><input name="respostas[1].correta" type="checkbox"></td>				
 				<td><label for="img-resp-1">Imagem:</label></td>
-				<td><input type="file" id="img-resp-1" name="img-resp-1"></td>			
+				<td><input type="file" id="img-resp-1" name="respostas[1].img"></td>			
 			</tr>
 			<tr>
 				<td><label for="resp3">Resposta 3:</label></td>
 				<td><input name="respostas[2].texto" id="resp3" required></td>
 				<td><input name="respostas[2].correta" type="checkbox"></td>		
 				<td><label for="img-resp-2">Imagem:</label></td>
-				<td><input type="file" id="img-resp-2" name="img-resp-2"></td>	
+				<td><input type="file" id="img-resp-2" name="respostas[2].img"></td>	
 			</tr>
 			<tr>
 				<td><label for="resp4">Resposta 4:</label></td>
 				<td><input name="respostas[3].texto" id="resp4" required></td>
 				<td><input name="respostas[3].correta" type="checkbox"></td>	
 				<td><label for="img-resp-3">Imagem:</label></td>
-				<td><input type="file" id="img-resp-3" name="img-resp-3"></td>
+				<td><input type="file" id="img-resp-3" name="respostas[3].img"></td>
 			</tr>
 			<tr>
 				<td><label for="resp5">Resposta 5:</label></td>
 				<td><input name="respostas[4].texto" id="resp5"></td>
 				<td><input name="respostas[4].correta" type="checkbox"></td>	
 				<td><label for="img-resp-4">Imagem:</label></td>
-				<td><input type="file" id="img-resp-4" name="img-resp-4"></td>	
+				<td><input type="file" id="img-resp-4" name="respostas[4].img"></td>	
 			</tr>
 			<tr>
 				<td><button id="insere">Insere</button></td>	

@@ -6,6 +6,7 @@ import br.com.yagotome.clicktrauma.modelo.Pergunta;
 
 public interface PerguntaDao {
 	void insere(Pergunta pergunta);
+	void atualiza(Pergunta pergunta);
 	void remove(Pergunta pergunta);
 	Pergunta buscaPorId(Long id);
 	List<Pergunta> lista();

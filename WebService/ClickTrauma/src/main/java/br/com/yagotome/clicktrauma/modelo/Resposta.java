@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Resposta {
@@ -12,6 +15,16 @@ public class Resposta {
 	private Long id;
 	private String texto;	
 	private boolean correta;
+	private String imgUrl;
+	@Transient private MultipartFile img;
+	public MultipartFile getImg() {
+		return img;
+	}
+
+	public void setImg(MultipartFile img) {
+		this.img = img;
+	}
+
 	@ManyToOne
 	private Pergunta pergunta;
 	
@@ -48,5 +61,13 @@ public class Resposta {
 
 	public void setPergunta(Pergunta pergunta) {
 		this.pergunta = pergunta;
+	}
+
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
 	}
 }

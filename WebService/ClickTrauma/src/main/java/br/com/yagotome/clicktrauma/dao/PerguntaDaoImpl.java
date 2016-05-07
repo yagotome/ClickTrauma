@@ -21,8 +21,7 @@ public class PerguntaDaoImpl implements PerguntaDao {
 		for (Resposta resposta : pergunta.getRespostas()) {
 			manager.persist(resposta);
 		}
-		manager.getTransaction().commit();
-		
+		manager.getTransaction().commit();		
 	}
 
 	@Override
@@ -45,6 +44,16 @@ public class PerguntaDaoImpl implements PerguntaDao {
 	@Override
 	public List<Pergunta> lista() {
 		return manager.createQuery("select p from Pergunta p").getResultList();
+	}
+
+	@Override
+	public void atualiza(Pergunta pergunta) {
+		manager.getTransaction().begin();
+		manager.merge(pergunta);
+		for (Resposta resposta : pergunta.getRespostas()) {
+			manager.merge(resposta);
+		}
+		manager.getTransaction().commit();		
 	}
 
 }

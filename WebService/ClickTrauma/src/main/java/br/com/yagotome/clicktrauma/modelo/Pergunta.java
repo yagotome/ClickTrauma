@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -13,6 +16,14 @@ public class Pergunta {
 	@GeneratedValue
 	private Long id;
 	private String texto;
+	private String imgUrl;
+	@Transient private MultipartFile img;
+	public MultipartFile getImg() {
+		return img;
+	}
+	public void setImg(MultipartFile img) {
+		this.img = img;
+	}
 	@OneToMany(mappedBy = "pergunta")
 	private List<Resposta> respostas;
 	public Long getId() {
@@ -32,5 +43,11 @@ public class Pergunta {
 	}
 	public void setRespostas(List<Resposta> respostas) {
 		this.respostas = respostas;
+	}
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
 	}	
 }
