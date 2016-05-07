@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 <body>
-
 	<div>
 		<form method="POST" enctype="multipart/form-data" action="insereFile">
 			<table>

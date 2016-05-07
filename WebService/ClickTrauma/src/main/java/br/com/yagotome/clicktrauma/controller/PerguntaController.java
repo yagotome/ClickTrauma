@@ -2,12 +2,17 @@ package br.com.yagotome.clicktrauma.controller;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URLDecoder;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
@@ -17,7 +22,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.yagotome.clicktrauma.dao.PerguntaDao;
 import br.com.yagotome.clicktrauma.dao.PerguntaDaoImpl;
@@ -27,6 +31,7 @@ import br.com.yagotome.clicktrauma.modelo.Resposta;
 @Controller
 public class PerguntaController {
 	private PerguntaDao dao;
+	
 	public PerguntaController() {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("ClickTrauma");
 		EntityManager manager = factory.createEntityManager();
@@ -65,38 +70,35 @@ public class PerguntaController {
 	public String abreFileUpload() {
 		return "pergunta/fileUpload";
 	}
-	@RequestMapping(method = RequestMethod.POST, value = "/pergunta/insereFile")
+	@RequestMapping(value = "/pergunta/insereFile", method = RequestMethod.POST)
 	public String handleFileUpload(@RequestParam("name") String name,
-								   @RequestParam("file") MultipartFile file/*,
-								   RedirectAttributes redirectAttributes*/) {		
+								   @RequestParam("file") MultipartFile file,
+								   ServletRequest request/*,
+								   RedirectAttributes redirectAttributes*/) {
 		if (name.contains("/")) {
 			//redirectAttributes.addFlashAttribute("message", "Folder separators not allowed");
 			return "redirect:/pergunta/insereFile";
 		}
+		
 		if (name.contains("/")) {
 			//redirectAttributes.addFlashAttribute("message", "Relative pathnames not allowed");
 			return "redirect:/pergunta/insereFile";
 		}
-		
 		if (!file.isEmpty()) {
 			try {
+				String path = request.getServletContext().getRealPath("/") 
+						+ request.getServletContext().getInitParameter("ImagesPath");
+				File arquivo = new File(path + name);
+				System.out.println(arquivo.getAbsolutePath());
 				BufferedOutputStream stream = new BufferedOutputStream(
-						new FileOutputStream(new File(name)));
+						new FileOutputStream(arquivo));
                 FileCopyUtils.copy(file.getInputStream(), stream);
-				stream.close();
-				//redirectAttributes.addFlashAttribute("message",
-					//	"You successfully uploaded " + name + "!");
+				stream.close();	
 			}
 			catch (Exception e) {
-				//redirectAttributes.addFlashAttribute("message",
-					//	"You failed to upload " + name + " => " + e.getMessage());
+				throw new RuntimeException(e);
 			}
 		}
-		/*else {
-			redirectAttributes.addFlashAttribute("message",
-					"You failed to upload " + name + " because the file was empty");
-		}*/
-		
 		return "redirect:/pergunta/insereFile";
 	}
 }
