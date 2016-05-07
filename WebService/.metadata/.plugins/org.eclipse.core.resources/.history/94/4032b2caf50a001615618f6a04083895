@@ -1,5 +1,0 @@
-package br.com.yagotome.clicktrauma.dao;
-
-public interface UsuarioDAO {
-
-}

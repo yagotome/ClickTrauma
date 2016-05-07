@@ -1,5 +1,8 @@
 package br.com.yagotome.clicktrauma.controller;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,7 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.yagotome.clicktrauma.dao.PerguntaDao;
 import br.com.yagotome.clicktrauma.dao.PerguntaDaoImpl;
@@ -52,5 +60,43 @@ public class PerguntaController {
 		p.setId(id);
 		dao.remove(p);
 		response.setStatus(200);
+	}
+	@RequestMapping(method = RequestMethod.GET, value = "/pergunta/insereFile")
+	public String abreFileUpload() {
+		return "pergunta/fileUpload";
+	}
+	@RequestMapping(method = RequestMethod.POST, value = "/pergunta/insereFile")
+	public String handleFileUpload(@RequestParam("name") String name,
+								   @RequestParam("file") MultipartFile file/*,
+								   RedirectAttributes redirectAttributes*/) {		
+		if (name.contains("/")) {
+			//redirectAttributes.addFlashAttribute("message", "Folder separators not allowed");
+			return "redirect:/pergunta/insereFile";
+		}
+		if (name.contains("/")) {
+			//redirectAttributes.addFlashAttribute("message", "Relative pathnames not allowed");
+			return "redirect:/pergunta/insereFile";
+		}
+		
+		if (!file.isEmpty()) {
+			try {
+				BufferedOutputStream stream = new BufferedOutputStream(
+						new FileOutputStream(new File(name)));
+                FileCopyUtils.copy(file.getInputStream(), stream);
+				stream.close();
+				//redirectAttributes.addFlashAttribute("message",
+					//	"You successfully uploaded " + name + "!");
+			}
+			catch (Exception e) {
+				//redirectAttributes.addFlashAttribute("message",
+					//	"You failed to upload " + name + " => " + e.getMessage());
+			}
+		}
+		/*else {
+			redirectAttributes.addFlashAttribute("message",
+					"You failed to upload " + name + " because the file was empty");
+		}*/
+		
+		return "redirect:/pergunta/insereFile";
 	}
 }

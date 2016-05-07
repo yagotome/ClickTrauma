@@ -13,6 +13,11 @@
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+		<multipart-config>
+			<location>/WEB-INF/</location>
+			<max-file-size>1024</max-file-size>
+			<max-request-size>1024</max-request-size>
+		</multipart-config>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>

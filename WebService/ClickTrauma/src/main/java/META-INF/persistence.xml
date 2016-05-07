@@ -13,8 +13,8 @@
 			<!-- dados da conexao -->	
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"	value="jdbc:mysql://localhost/click_trauma" />
-			<property name="javax.persistence.jdbc.user" value="development" />
-			<property name="javax.persistence.jdbc.password" value="yagotome" />			
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="_R1ph4cks4t4ll" />			
 			
 			<!-- propriedades do hibernate -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />

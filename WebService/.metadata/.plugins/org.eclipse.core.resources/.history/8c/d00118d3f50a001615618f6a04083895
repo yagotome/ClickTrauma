@@ -1,8 +1,0 @@
-package br.com.yagotome.clicktrauma.dao;
-
-import br.com.yagotome.clicktrauma.modelo.Usuario;
-
-public interface UsuarioDAO {
-	void insere(Usuario usuario);
-	Usuario getById(Long id);
-}

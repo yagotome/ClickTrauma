@@ -1,4 +1,4 @@
-﻿WebService/.metadata/*
-WebService/.recommenders/*
-WebService/RemoteSystemsTempFiles/*
-WebService/Servers/*
+﻿WebService/.metadata/**
+WebService/.recommenders/**
+WebService/RemoteSystemsTempFiles/**
+WebService/Servers/**
