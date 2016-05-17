@@ -1,1 +1,9 @@
-/* Empty. Add your own CSS if you like */
+.content {
+  background-color: #00DF61;
+}
+.login {
+  color: #FFF !important;
+}
+.center {
+  margin: auto !important;
+}
