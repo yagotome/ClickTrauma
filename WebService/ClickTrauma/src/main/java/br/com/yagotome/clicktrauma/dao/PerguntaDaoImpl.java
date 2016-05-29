@@ -4,23 +4,26 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import br.com.yagotome.clicktrauma.modelo.Idioma;
 import br.com.yagotome.clicktrauma.modelo.Pergunta;
-import br.com.yagotome.clicktrauma.modelo.Resposta;
 
 public class PerguntaDaoImpl implements PerguntaDao {
 	private EntityManager manager;
-	
+
 	public PerguntaDaoImpl(EntityManager manager) {
 		this.manager = manager;
 	}
-	
+
 	@Override
 	public void insere(Pergunta pergunta) {
 		manager.getTransaction().begin();
+		pergunta.getTexto().getMap().entrySet()
+				.stream()
+				.map(entry -> entry.getKey())
+				.filter(key -> manager.find(Idioma.class, key) == null)
+				.forEach(key -> manager.persist(new Idioma(key)));		
 		manager.persist(pergunta);
-		for (Resposta resposta : pergunta.getRespostas()) {
-			manager.persist(resposta);
-		}
+		pergunta.getRespostas().forEach(manager::persist);
 		manager.getTransaction().commit();		
 	}
 
@@ -28,9 +31,7 @@ public class PerguntaDaoImpl implements PerguntaDao {
 	public void remove(Pergunta pergunta) {
 		manager.getTransaction().begin();
 		pergunta = buscaPorId(pergunta.getId());
-		for (Resposta resposta : pergunta.getRespostas()) {
-			manager.remove(resposta);			
-		}
+		pergunta.getRespostas().forEach(manager::remove);
 		manager.remove(pergunta);
 		manager.getTransaction().commit();
 	}
@@ -50,10 +51,8 @@ public class PerguntaDaoImpl implements PerguntaDao {
 	public void atualiza(Pergunta pergunta) {
 		manager.getTransaction().begin();
 		manager.merge(pergunta);
-		for (Resposta resposta : pergunta.getRespostas()) {
-			manager.merge(resposta);
-		}
-		manager.getTransaction().commit();		
+		pergunta.getRespostas().forEach(manager::merge);
+		manager.getTransaction().commit();
 	}
 
 }

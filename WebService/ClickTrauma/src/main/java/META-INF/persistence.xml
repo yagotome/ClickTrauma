@@ -8,6 +8,8 @@
 		<class>br.com.yagotome.clicktrauma.modelo.Usuario</class>
 		<class>br.com.yagotome.clicktrauma.modelo.Pergunta</class>
 		<class>br.com.yagotome.clicktrauma.modelo.Resposta</class>
+		<class>br.com.yagotome.clicktrauma.modelo.Texto</class>		
+		<class>br.com.yagotome.clicktrauma.modelo.Idioma</class>
 		
 		<properties>	
 			<!-- dados da conexao -->	
