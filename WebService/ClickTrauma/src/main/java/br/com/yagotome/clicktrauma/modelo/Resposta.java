@@ -6,7 +6,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
@@ -29,16 +28,12 @@ public class Resposta {
 		return texto != null ? texto : (texto = new Texto());
 	}
 
-	@ManyToOne
-	private Pergunta pergunta;
-
 	public Resposta() {
 	}
 
-	public Resposta(String texto, boolean correta, Pergunta pergunta, Idioma idioma) {
+	public Resposta(String texto, boolean correta, Idioma idioma) {
 		setTexto(texto, idioma);
 		this.correta = correta;
-		this.pergunta = pergunta;
 	}
 
 	public Long getId() {
@@ -54,6 +49,10 @@ public class Resposta {
 		return this;
 	}
 
+	public Texto getTexto() {
+		return texto();
+	}
+	
 	public String getTexto(final Idioma idioma) {
 		return texto().getText(idioma.getCode());
 	}
@@ -64,14 +63,6 @@ public class Resposta {
 
 	public void setCorreta(boolean correta) {
 		this.correta = correta;
-	}
-
-	public Pergunta getPergunta() {
-		return pergunta;
-	}
-
-	public void setPergunta(Pergunta pergunta) {
-		this.pergunta = pergunta;
 	}
 
 	public String getImgUrl() {

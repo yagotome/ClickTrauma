@@ -59,11 +59,11 @@ public class PerguntaDaoTest {
 		pergunta.setTexto("Qual é a metade de dez?", portugues);
 		pergunta.setTexto("What is the half of ten?", ingles);
 		List<Resposta> respostas = new ArrayList<>();
-		respostas.add(new Resposta("Vinte", false, pergunta, portugues).setTexto("Twenty", ingles));		
-		respostas.add(new Resposta("Dez", false, pergunta, portugues).setTexto("Ten", ingles));
-		respostas.add(new Resposta("Dois", false, pergunta, portugues).setTexto("Two", ingles));
-		respostas.add(new Resposta("Cinco", true, pergunta, portugues).setTexto("Five", ingles));
-		respostas.add(new Resposta("Quinze", false, pergunta, portugues).setTexto("Fifteen", ingles));
+		respostas.add(new Resposta("Vinte", false, portugues).setTexto("Twenty", ingles));		
+		respostas.add(new Resposta("Dez", false, portugues).setTexto("Ten", ingles));
+		respostas.add(new Resposta("Dois", false, portugues).setTexto("Two", ingles));
+		respostas.add(new Resposta("Cinco", true, portugues).setTexto("Five", ingles));
+		respostas.add(new Resposta("Quinze", false, portugues).setTexto("Fifteen", ingles));
 		pergunta.setRespostas(respostas);
 		dao.insere(pergunta);
 	}

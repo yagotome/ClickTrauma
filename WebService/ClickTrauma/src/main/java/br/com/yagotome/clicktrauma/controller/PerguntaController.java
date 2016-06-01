@@ -60,7 +60,6 @@ public class PerguntaController {
 			pergunta.getRespostas().remove(4);
 			qtdResp = 4;
 		}
-		pergunta.getRespostas().forEach(resp -> resp.setPergunta(pergunta));
 		dao.insere(pergunta);
 		try {
 			String path = request.getServletContext().getRealPath("/")
@@ -118,7 +117,7 @@ public class PerguntaController {
 		model.addAttribute("perguntas", perguntas);
 		return "pergunta/lista";
 	}
-
+	
 	@RequestMapping("/pergunta/remove")
 	public void remove(Long id, HttpServletResponse response) {
 		Pergunta p = dao.buscaPorId(id);

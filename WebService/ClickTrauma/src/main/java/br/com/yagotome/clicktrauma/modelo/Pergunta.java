@@ -29,8 +29,8 @@ public class Pergunta {
 	private Texto texto() {
 		return texto != null ? texto : (texto = new Texto());
 	}
-
-	@OneToMany(mappedBy = "pergunta")
+	
+	@OneToMany
 	private List<Resposta> respostas;
 
 	public Long getId() {

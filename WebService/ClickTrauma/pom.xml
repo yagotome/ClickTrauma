@@ -66,5 +66,11 @@
 			<version>2.4</version>
 		</dependency>
 
+		<!-- GSON -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.6.2</version>
+		</dependency>
 	</dependencies>
 </project>
