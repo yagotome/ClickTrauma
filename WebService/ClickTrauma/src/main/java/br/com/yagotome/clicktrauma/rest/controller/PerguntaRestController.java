@@ -1,8 +1,6 @@
-package br.com.yagotome.clicktrauma.controller;
+package br.com.yagotome.clicktrauma.rest.controller;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.inject.Inject;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,17 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.google.gson.GsonBuilder;
 
 import br.com.yagotome.clicktrauma.dao.PerguntaDao;
-import br.com.yagotome.clicktrauma.dao.PerguntaDaoImpl;
 
 @RestController
 public class PerguntaRestController {
+	@Inject
 	private PerguntaDao dao;
-
-	public PerguntaRestController() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("ClickTrauma");
-		EntityManager manager = factory.createEntityManager();
-		dao = new PerguntaDaoImpl(manager);
-	}
 
 	@RequestMapping(value = "/ws/perguntas", method = RequestMethod.GET)
 	@ResponseBody

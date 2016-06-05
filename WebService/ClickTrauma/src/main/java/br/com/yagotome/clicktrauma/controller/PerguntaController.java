@@ -5,9 +5,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.inject.Inject;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,20 +18,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import br.com.yagotome.clicktrauma.dao.PerguntaDao;
-import br.com.yagotome.clicktrauma.dao.PerguntaDaoImpl;
 import br.com.yagotome.clicktrauma.modelo.Idioma;
 import br.com.yagotome.clicktrauma.modelo.Pergunta;
 import br.com.yagotome.clicktrauma.modelo.Resposta;
 
 @Controller
 public class PerguntaController {
-	private PerguntaDao dao;
-
-	public PerguntaController() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("ClickTrauma");
-		EntityManager manager = factory.createEntityManager();
-		dao = new PerguntaDaoImpl(manager);
-	}
+	@Inject
+	private PerguntaDao dao;	
 	
 	@RequestMapping("/pergunta/cadastro")
 	public String cadastraPergunta() {

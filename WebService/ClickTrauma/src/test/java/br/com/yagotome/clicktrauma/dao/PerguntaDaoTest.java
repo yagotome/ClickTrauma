@@ -3,6 +3,7 @@ package br.com.yagotome.clicktrauma.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -18,13 +19,13 @@ import br.com.yagotome.clicktrauma.modelo.Resposta;
 public class PerguntaDaoTest {
 	private EntityManagerFactory factory;
 	private EntityManager manager;
+	@Inject
 	private PerguntaDao dao;
 
 	@Before
 	public void init() {
 		factory = Persistence.createEntityManagerFactory("ClickTrauma");
 		manager = factory.createEntityManager();
-		dao = new PerguntaDaoImpl(manager);
 	}
 
 	@After
@@ -50,10 +51,10 @@ public class PerguntaDaoTest {
 	public void testInsere() {
 		Idioma ingles = new Idioma();
 		ingles.setCode("en");
-		manager.persist(ingles);
+		//manager.persist(ingles);
 		Idioma portugues = new Idioma();
 		portugues.setCode("pt");
-		manager.persist(portugues);
+		//manager.persist(portugues);
 
 		Pergunta pergunta = new Pergunta();
 		pergunta.setTexto("Qual é a metade de dez?", portugues);

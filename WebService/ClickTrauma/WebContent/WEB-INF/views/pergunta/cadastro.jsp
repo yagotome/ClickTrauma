@@ -13,7 +13,8 @@
 	</c:if>
 </head>
 <body>
-	<a href="lista">Lista</a>
+	<a href="lista?lang=pt">Lista em português</a>
+	<a href="lista?lang=en">Lista em inglês</a>
 	<br /> <br />
 	<form action="insere" method="post" enctype="multipart/form-data">
 		<table>

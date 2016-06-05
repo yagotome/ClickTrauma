@@ -9,8 +9,13 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<context:component-scan base-package="br.com.yagotome.clicktrauma.controller" />
+	<context:component-scan base-package="br.com.yagotome.clicktrauma" />
 	<mvc:annotation-driven />
+	
+	<bean id="entityManagerFactory" class="br.com.yagotome.clicktrauma.jpa.MyEntityManagerFactory" />
+	
+	<bean id="entityManager" factory-bean="entityManagerFactory" factory-method="createEntityManager" 
+		class="javax.persistence.EntityManager" />
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

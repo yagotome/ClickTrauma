@@ -71,20 +71,20 @@
 		<c:forEach items="${perguntas}" var="pergunta">
 			<tr id="pergunta_${pergunta.id}">
 				<td>${pergunta.id}</td>
-				<td>${pergunta.texto.getText("pt")}</td>
-				<td>${pergunta.respostas[0].texto.getText("pt")}</td>			
-				<td>${pergunta.respostas[1].texto.getText("pt")}</td>
-				<td>${pergunta.respostas[2].texto.getText("pt")}</td>
-				<td>${pergunta.respostas[3].texto.getText("pt")}</td>
-				<td>${empty pergunta.respostas[4] ? "" : pergunta.respostas[4].texto.getText("pt")}</td>
+				<td>${pergunta.texto.getText(param.lang)}</td>
+				<td>${pergunta.respostas[0].texto.getText(param.lang)}</td>			
+				<td>${pergunta.respostas[1].texto.getText(param.lang)}</td>
+				<td>${pergunta.respostas[2].texto.getText(param.lang)}</td>
+				<td>${pergunta.respostas[3].texto.getText(param.lang)}</td>
+				<td>${empty pergunta.respostas[4] ? "" : pergunta.respostas[4].texto.getText(param.lang)}</td>
 				<td>
 					<c:forEach items="${pergunta.respostas}" var="resp">
 						<c:if test="${resp.correta}">
-							${resp.texto.getText("pt")}
+							${resp.texto.getText(param.lang)}
 						</c:if>
 					</c:forEach>
 				</td>
-				<td><button onclick="exclui('${pergunta.id}', '${pergunta.texto.getText('pt')}')">X</button></td>
+				<td><button onclick="exclui('${pergunta.id}', '${pergunta.texto.getText(param.lang)}')">X</button></td>
 			</tr>
 		</c:forEach>
 	</table>

@@ -2,18 +2,18 @@ package br.com.yagotome.clicktrauma.dao;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 
 import br.com.yagotome.clicktrauma.modelo.Idioma;
 import br.com.yagotome.clicktrauma.modelo.Pergunta;
 
+@Named
 public class PerguntaDaoImpl implements PerguntaDao {
+	@Inject
 	private EntityManager manager;
-
-	public PerguntaDaoImpl(EntityManager manager) {
-		this.manager = manager;
-	}
-
+	
 	@Override
 	public void insere(Pergunta pergunta) {
 		manager.getTransaction().begin();
@@ -21,6 +21,7 @@ public class PerguntaDaoImpl implements PerguntaDao {
 				.stream()
 				.map(entry -> entry.getKey())
 				.filter(key -> manager.find(Idioma.class, key) == null)
+				.distinct()
 				.forEach(key -> manager.persist(new Idioma(key)));		
 		manager.persist(pergunta);
 		pergunta.getRespostas().forEach(manager::persist);
