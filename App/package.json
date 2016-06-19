@@ -1,7 +1,7 @@
 {
-  "name": "app",
+  "name": "clicktrauma",
   "version": "1.1.1",
-  "description": "App: An Ionic project",
+  "description": "ClickTrauma: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
