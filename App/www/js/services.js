@@ -37,9 +37,12 @@ angular.module('app.services', [])
         var _getProximaPerguntaPrototipo = function (perguntas, perguntaAtual) {
             var atual = perguntaAtual || { id: 0 };
             var nextId = atual.id + 1;
-            return perguntas.find(function (item) {
-                return item.id == nextId;
+            var proxima = null;
+            perguntas.forEach(function (item) {
+                if (item.id == nextId)
+                    proxima = item;
             });
+            return proxima;
         };
 
         return {
