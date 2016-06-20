@@ -1,19 +1,19 @@
 <ion-view title="Login" id="page6" style="background-color:#A6CE39;" class=" ">
     <ion-content padding="true" class="has-header">
-        <form id="login-form2" class="list ">
+        <form name="loginForm" class="list ">
             <ion-list id="login-list2" class=" ">
                 <label class="item item-input " id="login-input4">
                     <span class="input-label">Username</span>
-                    <input type="text" placeholder="">
+                    <input ng-model="vm.usuario.login" required type="text" placeholder="">
                 </label>
                 <label class="item item-input " id="login-input5">
                     <span class="input-label">Senha</span>
-                    <input type="password" placeholder="">
+                    <input ng-model="vm.usuario.senha" required type="password" placeholder="">
                 </label>
             </ion-list>
             <div class="spacer" style="height: 40px;"></div>
-            <button id="login-button2" class=" button button-stable  button-block ">Log in</button>
-            <a href="#" onclick="window.open('/signup', '_system', 'location=yes'); return false;" id="login-button3" class=" button button-light  button-block button-outline ">Primeira vez? Cadastre-se aqui</a>
+            <button id="login-button2" ng-disabled="!loginForm.$valid" ng-click="vm.logar(vm.usuario)" class=" button button-stable  button-block ">Log in</button>
+            <a href="" ui-sref="cadastro"  id="login-button3" class=" button button-light  button-block button-outline ">Primeira vez? Cadastre-se aqui</a>
         </form>
         <div class="" style="margin-left: -10px; width: calc(100% + 20px);">
             <img src="img/JxbDd9tIT7C6I2dCOweV_cd22c5fa-eed0-462a-84f9-0e70b713e5f0.jpg" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">

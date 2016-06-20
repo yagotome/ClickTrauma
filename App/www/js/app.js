@@ -21,3 +21,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     }
   });
 })
+
+.constant('backendConfig', {
+    "urlBase": "http://localhost:8080/ws/rest"
+})

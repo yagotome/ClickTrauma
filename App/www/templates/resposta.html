@@ -1,11 +1,15 @@
 <ion-view title="Resposta" id="page10" style="background-color:#A6CE39;" class=" ">
     <ion-content padding="true" class="has-header">
-        <h1 id="resposta-heading3" style="color:#FFFFFF;font-weight:300;text-align:center;" class=" ">Certo!</h1>
+        <h1 id="resposta-heading3" style="color:#FFFFFF;font-weight:300;text-align:center;" class=" ">
+            {{vm.feedback.titulo}}
+        </h1>
         <div class="">
             <img src="img/sGHh5hAdROy3PMtMQVhf_832153e0-21cc-4928-bd07-654b6ad7b189.jpg" width="40%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
         </div>
         <div class="spacer" style="width: 300px; height: 15px;"></div>
-        <p id="resposta-markdown2" style="color:#575656;text-align:center;" class=" ">Lorem ipsum dolor sit amet, usu et aperiam reprehendunt at. Cu mel oratio laoreet definitionem. Elit qualisque.</p>
-        <button id="resposta-button5" class=" button button-light  button-block ">Próxima</button>
+        <p id="resposta-markdown2" style="color:#575656;text-align:center;" class=" ">
+            {{vm.feedback.texto}}
+        </p>
+        <button id="resposta-button5" ng-click="vm.proxima()" class=" button button-light  button-block ">Próxima</button>
     </ion-content>
 </ion-view>
