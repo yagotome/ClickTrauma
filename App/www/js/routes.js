@@ -72,6 +72,18 @@ angular.module('app.routes', [])
         controller: 'comoDiagnosticarCtrl'
       })
 
+      .state('traumatismoEmDente', {
+        url: '/traumatismoEmDente',
+        templateUrl: 'templates/traumatismoEmDente.html',
+        controller: 'traumatismoEmDenteCtrl',
+        controllerAs: 'vm'
+      })
+
+    .state('comoDiagnosticarTraumatismoEmDente', {
+        url: '/comoDiagnosticarTraumatismoEmDente',
+        templateUrl: 'templates/comoDiagnosticarTraumatismoEmDente.html',
+      })      
+
       .state('quiz', {
         url: '/quiz',
         templateUrl: 'templates/quiz.html',

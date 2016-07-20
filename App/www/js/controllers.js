@@ -54,6 +54,10 @@ angular.module('app.controllers', [])
 
     })
 
+    .controller('traumatismoEmDenteCtrl', function ($scope) {
+        var vm = this;
+    })
+
     .controller('quizCtrl', function ($scope, $state, QuizService) {
         var vm = this;
         var perguntas = [
