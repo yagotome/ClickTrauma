@@ -12,7 +12,8 @@ angular.module('app.controllers', [])
 
     })
 
-    .controller('cadastroCtrl', function ($scope, CadastroService, $state) {
+    .controller('cadastroCtrl', function ($scope, CadastroService, $state, $ionicNavBarDelegate) {
+        $ionicNavBarDelegate.showBackButton(true);
         var vm = this;
         vm.cadastrar = function (usuario) {
             $state.go('menu');
@@ -22,7 +23,16 @@ angular.module('app.controllers', [])
         };
     })
 
-    .controller('loginCtrl', function ($scope, LoginService, $state, $ionicPopup) {
+    .controller('mainCtrl', function ($scope, $ionicNavBarDelegate, $ionicHistory) {
+        $scope.valida = function() {
+            console.log($ionicHistory);
+            $ionicHistory.goBack();
+        };
+    })
+
+    .controller('loginCtrl', function ($scope, LoginService, $state, $ionicPopup, $ionicNavBarDelegate) {
+        $ionicNavBarDelegate.showBackButton(false);
+
         var vm = this;
         vm.logar = function (usuario) {
             // LoginService.loginPrototipo().success(function (data) {
@@ -46,19 +56,21 @@ angular.module('app.controllers', [])
         };
     })
 
-    .controller('menuCtrl', function ($scope) {
-
+    .controller('menuCtrl', function ($scope, $ionicNavBarDelegate, $ionicHistory) {
+        $ionicHistory.clearHistory();
     })
 
-    .controller('comoDiagnosticarCtrl', function ($scope) {
-
+    .controller('comoDiagnosticarCtrl', function ($scope, $ionicNavBarDelegate) {
+        $ionicNavBarDelegate.showBackButton(true);
     })
 
-    .controller('traumatismoEmDenteCtrl', function ($scope) {
+    .controller('traumatismoEmDenteCtrl', function ($scope, $ionicNavBarDelegate) {
+        $ionicNavBarDelegate.showBackButton(true);
         var vm = this;
     })
 
-    .controller('quizCtrl', function ($scope, $state, QuizService) {
+    .controller('quizCtrl', function ($scope, $state, QuizService, $ionicNavBarDelegate) {
+        $ionicNavBarDelegate.showBackButton(true);
         var vm = this;
         var perguntas = [
             {

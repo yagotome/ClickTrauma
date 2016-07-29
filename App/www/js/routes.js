@@ -81,7 +81,7 @@ angular.module('app.routes', [])
 
     .state('comoDiagnosticarTraumatismoEmDente', {
         url: '/comoDiagnosticarTraumatismoEmDente',
-        templateUrl: 'templates/comoDiagnosticarTraumatismoEmDente.html',
+        templateUrl: 'templates/comoDiagnosticarTraumatismoEmDente.html'
       })      
 
       .state('quiz', {
