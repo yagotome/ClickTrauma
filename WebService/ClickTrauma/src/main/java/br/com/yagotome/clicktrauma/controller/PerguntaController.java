@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import br.com.yagotome.clicktrauma.dao.PerguntaDao;
-import br.com.yagotome.clicktrauma.modelo.Idioma;
-import br.com.yagotome.clicktrauma.modelo.Pergunta;
-import br.com.yagotome.clicktrauma.modelo.Resposta;
+import br.com.yagotome.clicktrauma.modelo.quiz.Idioma;
+import br.com.yagotome.clicktrauma.modelo.quiz.Pergunta;
+import br.com.yagotome.clicktrauma.modelo.quiz.Resposta;
 
 @Controller
 public class PerguntaController {

@@ -12,9 +12,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.yagotome.clicktrauma.modelo.Idioma;
-import br.com.yagotome.clicktrauma.modelo.Pergunta;
-import br.com.yagotome.clicktrauma.modelo.Resposta;
+import br.com.yagotome.clicktrauma.modelo.quiz.Idioma;
+import br.com.yagotome.clicktrauma.modelo.quiz.Pergunta;
+import br.com.yagotome.clicktrauma.modelo.quiz.Resposta;
 
 public class PerguntaDaoTest {
 	private EntityManagerFactory factory;

@@ -1,4 +1,4 @@
-package br.com.yagotome.clicktrauma.modelo;
+package br.com.yagotome.clicktrauma.modelo.quiz;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;

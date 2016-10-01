@@ -1,4 +1,4 @@
-package br.com.yagotome.clicktrauma.modelo;
+package br.com.yagotome.clicktrauma.modelo.quiz;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlTransient;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -23,6 +24,7 @@ public class Pergunta {
 	@JoinColumn(name = "texto_id")
 	private Texto texto;
 	private String imgUrl;
+	@XmlTransient
 	@Transient
 	private MultipartFile img;
 

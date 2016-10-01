@@ -7,9 +7,10 @@ import javax.persistence.Persistence;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
-import br.com.yagotome.clicktrauma.modelo.Usuario;
+import br.com.yagotome.clicktrauma.modelo.usuario.Usuario;
+
+import static org.junit.Assert.*;
 
 public class UsuarioDaoTest {
 	private EntityManagerFactory factory;

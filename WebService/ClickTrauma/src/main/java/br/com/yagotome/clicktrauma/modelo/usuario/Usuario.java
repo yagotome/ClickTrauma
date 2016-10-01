@@ -1,4 +1,4 @@
-package br.com.yagotome.clicktrauma.modelo;
+package br.com.yagotome.clicktrauma.modelo.usuario;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

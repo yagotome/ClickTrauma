@@ -6,8 +6,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 
-import br.com.yagotome.clicktrauma.modelo.Idioma;
-import br.com.yagotome.clicktrauma.modelo.Pergunta;
+import br.com.yagotome.clicktrauma.modelo.quiz.Idioma;
+import br.com.yagotome.clicktrauma.modelo.quiz.Pergunta;
 
 @Named
 public class PerguntaDaoImpl implements PerguntaDao {

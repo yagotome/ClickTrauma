@@ -2,7 +2,7 @@ package br.com.yagotome.clicktrauma.dao;
 
 import javax.persistence.EntityManager;
 
-import br.com.yagotome.clicktrauma.modelo.Usuario;
+import br.com.yagotome.clicktrauma.modelo.usuario.Usuario;
 
 public class UsuarioDaoImpl implements UsuarioDao {
 

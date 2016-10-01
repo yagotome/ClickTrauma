@@ -5,18 +5,19 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
 		<!-- entidade mapeada -->
-		<class>br.com.yagotome.clicktrauma.modelo.Usuario</class>
-		<class>br.com.yagotome.clicktrauma.modelo.Pergunta</class>
-		<class>br.com.yagotome.clicktrauma.modelo.Resposta</class>
-		<class>br.com.yagotome.clicktrauma.modelo.Texto</class>		
-		<class>br.com.yagotome.clicktrauma.modelo.Idioma</class>
+		<class>br.com.yagotome.clicktrauma.modelo.usuario.Usuario</class>
+		<class>br.com.yagotome.clicktrauma.modelo.usuario.DadosUsuario</class>
+		<class>br.com.yagotome.clicktrauma.modelo.quiz.Pergunta</class>
+		<class>br.com.yagotome.clicktrauma.modelo.quiz.Resposta</class>
+		<class>br.com.yagotome.clicktrauma.modelo.quiz.Texto</class>		
+		<class>br.com.yagotome.clicktrauma.modelo.quiz.Idioma</class>
 		
 		<properties>	
 			<!-- dados da conexao -->	
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"	value="jdbc:mysql://localhost/click_trauma" />
 			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="" />			
+			<property name="javax.persistence.jdbc.password" value="yagotome" />			
 			
 			<!-- propriedades do hibernate -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
